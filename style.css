@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn-bar {
+    position: fixed;
+    z-index: 100;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right,
+            rgba(255, 0, 255, 0.9),
+            rgba(0, 217, 255, 0.9));
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+#clearCanvas {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    transition: all 0.25s;
+    padding-left: 0;
+}
+
+#penButton {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    background-color: transparent;
+    color: black;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#eraserButton {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#colorPicker {
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background-image: url("color-picker-icon.png");
+    /* Custom icon image */
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#colorPicker::-webkit-color-swatch-wrapper {
+    padding: 0;
+    /* Remove padding */
+}
+
+#colorPicker::-webkit-color-swatch {
+    margin: 2px;
+    border: none;
+    /* Remove border */
+    border-radius: 50%;
+    /* Make it round */
+    padding: 0;
+    /* Remove padding */
+}
+
+.btn-size {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 10px;
+    width: 60px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.175);
+    font-weight: bold;
+    color: white;
+}
+
+.dropdown-menu {
+    min-width: 150px !important;
+    padding-left: 10px;
+}
+
+canvas {
+    cursor: auto;
+    /* Default cursor for pen mode */
+}
+
+canvas.eraser-mode {
+    cursor: grabbing;
+}
+
+body {
+    padding-bottom: 0px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    cursor: pointer;
+}
+
+#bg-change {
+    margin-left: 10px;
+    height: 30px;
+    width: 30px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+#bg-change input {
+    margin-top: -18px;
+    opacity: 0;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+#BG {
+    color: white;
+    font-weight: bold;
+    position: relative;
+    top: 3px;
+    left: 0px;
+}
+
+@media screen and (max-width:425px) {
+    #clearCanvas {
+        font-size: 13px;
+    }
+
+    .btn-size {
+        width: 50px;
+        height: 25px;
+        font-size: 13px;
+    }
+
+    #colorPicker {
+        width: 16px;
+        height: 16px;
+    }
+
+    #penButton {
+        font-size: 13px;
+        padding: 7px;
+    }
+
+    #bg-change {
+        height: 20px;
+        width: 23px;
+    }
+
+    #BG {
+        top: -2px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .btn-bar {
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+}
